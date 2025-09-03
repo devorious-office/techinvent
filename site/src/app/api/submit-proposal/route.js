@@ -32,7 +32,7 @@ export async function POST(request) {
         // If resubmittedFromId exists, set it as the originalProposal to create a thread
         originalProposal: resubmittedFromId || null,
         verifiedEmail: proposalData.email,
-        status: 'admin', // Always reset status to 'admin' for review
+        status: 'under_review', // Always reset status to 'admin' for review
         remarks: '', // Always clear old remarks
     });
 
