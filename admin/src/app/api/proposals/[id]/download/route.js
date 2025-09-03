@@ -16,7 +16,7 @@ export async function GET(request, { params }) {
       return NextResponse.json({ message: "Proposal not found" }, { status: 404 });
     }
 
-    const templatePath = path.resolve(process.cwd(), 'templates', 'format.docx');
+    const templatePath = path.join(process.cwd(), 'src', 'templates', 'format.docx');
     const content = fs.readFileSync(templatePath, 'binary');
 
     const zip = new PizZip(content);
